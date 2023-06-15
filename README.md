@@ -59,11 +59,8 @@ A total of 3 tests were performed, and all of them were successful.
 
 ## Contract Deployment Information
 
-- Transaction hash: 0x9569a7602867c04790b45d909e8e81267b4672f4ef22f14d0e1dfef3632d720e
-- Contract address: 0xB154dF2C4906eA4074455475726478cb52389fb5
-- Block number: 30698404
-- Block timestamp: 1686790163
-- Deployment cost: 0.02184878 ETH
+- Transaction hash: 0xd115d54d29b3710ab9cbb62ed602811603b648293350eea8cec2aa0acb2cf0d0
+- Contract address: 0x7767d03fA08cFebd7cc9C78C84877eC09d0f902E
 
 
 # BNB Smart Chain Truffle Box

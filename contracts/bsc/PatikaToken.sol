@@ -182,27 +182,5 @@ contract PatikaToken {
 
 
 
-// > transaction hash:    0x9569a7602867c04790b45d909e8e81267b4672f4ef22f14d0e1dfef3632d720e
-//    > Blocks: 2            Seconds: 4
-//    > contract address:    0xB154dF2C4906eA4074455475726478cb52389fb5
-//    > block number:        30698404
-//    > block timestamp:     1686790163
-
-//    --------------------------------
-//    > confirmation number: 1 (block: 30698406)
-//    > confirmation number: 2 (block: 30698407)
-//    > confirmation number: 4 (block: 30698409)
-//    > confirmation number: 5 (block: 30698410)
-//    > confirmation number: 6 (block: 30698411)
-//    > confirmation number: 8 (block: 30698413)
-//    > confirmation number: 9 (block: 30698414)
-//    > confirmation number: 10 (block: 30698415)
-// export const PatikaTokenAddress =  + PatikaTokenAddress
-//    > Saving artifacts
-//    -------------------------------------
-//    > Total cost:          0.02184878 ETH
-
-// Summary
-// =======
-// > Total deployments:   1
-// > Final cost:          0.02184878 ETH
+// - Transaction hash: 0xd115d54d29b3710ab9cbb62ed602811603b648293350eea8cec2aa0acb2cf0d0
+// - Contract address: 0x7767d03fA08cFebd7cc9C78C84877eC09d0f902E
