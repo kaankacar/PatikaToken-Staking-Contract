@@ -1,1 +1,1 @@
-export const PatikaTokenAddress = 0x88CBC2a6dB0011dcB07D247207e36D0E72f1B9EC
+export const PatikaTokenAddress = 0x1AD6605B70cbB524368E00C16663493Dd4fA2117

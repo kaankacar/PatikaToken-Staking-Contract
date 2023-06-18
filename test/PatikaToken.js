@@ -38,7 +38,7 @@ contract("PatikaToken", (accounts) => {
   });
 
   it("should execute the airdrop function", async () => {
-    const recipient = accounts[0]; // Airdrop işlemini başlatan kullanıcı
+    const recipient = accounts[0]; 
     const initialRecipientBalance = await contract.balanceOf(recipient);
 
     await contract.airdrop();
@@ -53,9 +53,9 @@ contract("PatikaToken", (accounts) => {
 });
 
 // Contract: PatikaToken
-//     ✔ should have correct initial values (45ms)
+//     ✔ should have correct initial values (44ms)
 //     ✔ should have total supply in the contract
-//     ✔ should execute the airdrop function (69ms)
+//     ✔ should execute the airdrop function (74ms)
 
 
-//   3 passing (216ms)
+//   3 passing (213ms)

@@ -1,53 +1,48 @@
-# PatikaToken Staking Contract
+# PATIKA($PTK) STAKING CONTRACT
 
-This contract is used for staking operations of a token named "Patika".
+This $PTK staking contract is deployed on the BNB Chain and represents the Patika token (PTK).
 
 ## Token Information
 
-- Token name: Patika
-- Token symbol: PTK
-- Total token supply: 1,000,000 PTK
+- Token Name: Patika
+- Token Symbol: PTK
+- Blockchain: BNB Chain
+- Smart Contract Address: 0xdb7CA9F0b7687687A01C134CF9b8F5D3eC7Bf3eA
+- Total Supply: 1.000.000 $PTK
+- Staking Rewards: 1% Daily
 
-# Variables, Functions, Events
+## Variables, Mappings and Functions
 
-## Variables
+### Variables
 
-- `_name`: A private string variable representing the token name.
-- `_symbol`: A private string variable representing the token symbol.
-- `_decimals`: A private uint8 variable representing the decimal places of the token.
-- `_totalSupply`: A private uint256 variable representing the total token supply.
-- `_balances`: A private mapping variable tracking account balances by address.
-- `_allowances`: A private mapping variable tracking approved balances by address and spending allowance.
-- `_owner`: A private address variable representing the owner of the contract.
-- `_stakingRewards`: A private mapping variable tracking staking rewards by address.
-- `_lastStakeTimestamp`: A private mapping variable tracking the last stake timestamps by address.
-- `_isStaked`: A private mapping variable tracking the staking status by address.
+- `STAKING_REWARD_RATE`: Private constant variable that represents the staking reward rate, set to 1% per day.
+- `_totalStakedTokens`: Private variable that keeps track of the total amount of tokens staked in the contract.
 
-## Functions
+### Mappings
 
-- `name()`: A function that returns the token name.
-- `symbol()`: A function that returns the token symbol.
-- `decimals()`: A function that returns the decimal places of the token.
-- `totalSupply()`: A function that returns the total token supply.
-- `balanceOf(address account)`: A function that returns the account balance for the specified address.
-- `transfer(address recipient, uint256 amount)`: A function that transfers a specified amount of tokens to the given address.
-- `approve(address spender, uint256 amount)`: A function that approves a specified amount of spending allowance to the given address.
-- `transferFrom(address sender, address recipient, uint256 amount)`: A function that transfers a specified amount of tokens from one address to another.
-- `increaseAllowance(address spender, uint256 addedValue)`: A function that increases the spending allowance by the specified amount.
-- `decreaseAllowance(address spender, uint256 subtractedValue)`: A function that decreases the spending allowance by the specified amount.
-- `stake(uint256 amount)`: A function that includes the specified amount of tokens in the staking process.
-- `claimReward()`: A function that allows claiming staking rewards.
-- `isStaked(address account)`: A function that returns whether staking is performed at the specified address.
-- `airdrop()`: A function that performs the distribution of a specific amount of tokens as airdrop.
-- `transferOwnership(address newOwner)`: A function that transfers the contract ownership to another address.
-- `transferTokens(address recipient, uint256 amount)`: A function that allows the contract owner to transfer a specified amount of tokens to the given address.
 
-## Events
+- `mapping(address => uint256) private _stakingRewards`: This mapping keeps track of the staking rewards for each user. It associates each user's address with the corresponding staking reward amount.
 
-The contract can emit the following events:
+- `mapping(address => uint256) private _lastStakeTimestamp`: This mapping stores the timestamp of the last stake made by each user. It associates each user's address with the corresponding last stake timestamp.
 
-- `Transfer(address indexed from, address indexed to, uint256 value)`: Triggered when a token transfer occurs.
-- `Approval(address indexed owner, address indexed spender, uint256 value)`: Triggered when a spending allowance is approved.
+- `mapping(address => bool) private _isStaked`: This mapping keeps track of whether each user has staked tokens or not. It associates each user's address with a boolean value representing their staked status.
+
+- `mapping(address => uint256) private _stakeBalanceOf`: This mapping stores the stake balance of each user. It associates each user's address with the amount of tokens they have staked.
+
+### Functions
+
+1. `getTotalTokenSupply()`: External function that returns the total token supply held by the contract.
+
+2. `getTotalStakedTokens()`: External function that returns the total amount of tokens currently staked in the contract.
+
+3. `stake(uint256 amount)`: External function that allows users to stake a specified amount of tokens. The function requires the user to have a sufficient token balance. Upon staking, the function calculates the staking reward, updates staking rewards, the last stake timestamp, and the user's staked status. The staked amount is transferred from the user's balance to the contract, and the staked balance for the user is updated.
+
+4. `claimRewardsAndUnstake()`: External function that allows users to claim their staking rewards and unstake their tokens. The function checks if the user has staked tokens available for withdrawal. It calculates the reward duration and the total reward to be claimed based on the staking rewards and the duration of the stake. The staking rewards and last stake timestamp are reset, and the user's staked status is updated. The total amount to be transferred is calculated, and the reward and staked amount are transferred back to the user. The staked balance for the user is reset.
+
+5. `airdrop()`: External function that allows the contract to perform an airdrop of tokens to the calling address. It transfers 100 $PTK from the contract's balance to the caller.
+
+**Note:** The contract inherits from the `ERC20` and `Ownable` contracts provided by the OpenZeppelin library, which implement ERC-20 token functionality and ownership management, respectively.
+
 
 ## Test Results
 
@@ -59,8 +54,8 @@ A total of 3 tests were performed, and all of them were successful.
 
 ## Contract Deployment Information
 
-- Transaction hash: 0xd115d54d29b3710ab9cbb62ed602811603b648293350eea8cec2aa0acb2cf0d0
-- Contract address: 0x7767d03fA08cFebd7cc9C78C84877eC09d0f902E
+- Transaction hash: 0x23b6ad6da9c67fad9e9dcd478187f89114db881022aa67b3edcee2b1d37d6d90
+- Contract address: 0xdb7CA9F0b7687687A01C134CF9b8F5D3eC7Bf3eA
 
 
 # BNB Smart Chain Truffle Box
